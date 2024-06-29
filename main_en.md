@@ -9,7 +9,7 @@ Additionally, a network administrator shall consider private IPv4 address exhaus
 
 (add pic of enter network)
 
-Typical data center network uses L2 Fabric or IP Fabric (EVPN-VXLAN). It connects Internet gateway, Branch office gateway (SD-WAN, SASE), IaaS (VM infra), physical servers and Sercurity devices. Networks are isolated by VLAN for respective applications.
+Typical data center network uses L2 Fabric or IP Fabric (EVPN-VXLAN). It connects Internet gateway, Branch office gateway (SD-WAN, SASE), IaaS (VM infra), physical servers and Sercurity devices. Networks are isolated by VLANs of Fabric or virtual netowrk in IaaS for respective applications.
 
 (add pic of L2 netowrk in DC)
 
@@ -27,6 +27,10 @@ L2 extension across data centers and clouds makes L2 BUM traffic and IP address 
 
 (add pic of hybric cloud)
 
+Kubernetes (and regarding distributions like OpenShift, EKS) connectivity is challenge because Kubernetes abstructs network inside. Only node IP address is exposed to external network. Typical Firewall cannot identify source applications by IP address, because source IP address is SNATed by Kubernetes node. Typical enterprise network devides different networks by VLANs. For instance, User access network, Application network, Database network are isolated. When applicaion on Kubernetes needs to access these three networks, but it is hard to connects multiple VLANs. If L3 level isolation is required, BGP session shall be separated.
+
+(add pic of Kubernetes)
+
 Network administrator/operator aim to Self service or network automation for Application access. But most of approach is automation of network configurations by Ansible. Self service requires Network service layer on Ansible. Designing and developpoing service layer need huge effort.
 
 (add pic of Service layer)
@@ -38,11 +42,16 @@ Application acccess is complex. One application accesses different application a
 
 ## Data center and clouds access challenges
 
+L3VPN between DC and Clouds. Distributed LB between DC and Clouds.
+
 ## IP address conflict challenges
 
+Current solution is complex SANT/DNAT + ACL operation.
+
 ## Re-desiging Enterprise network
-Describe how Network abstruction layer works and its required functionality.
-Modulered Network service
+Describe how Network abstraction layer works and its required functions. Modules Network service
+
+## The road of Self operation Network
 
 
 
