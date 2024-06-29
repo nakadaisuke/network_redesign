@@ -31,5 +31,18 @@ Network administrator/operator aim to Self service or network automation for App
 
 (add pic of Service layer)
 
-## Network Abstraction layer in Enterprise Network
+## Application access challenges
+
+Application acccess is complex. One application accesses different application and application recives traffic from multiple clients, Branch office, Laptop, mobile or others.
+(describe Source/Destination L3/L4 access control is limit of operation)
+
+## Data center and clouds access challenges
+
+## IP address conflict challenges
+
+## Re-desiging Enterprise network
+Describe how Network abstruction layer works and its required functionality.
+Modulered Network service
+
+
 
